@@ -1,0 +1,14 @@
+div{
+    margin-top: 5vh;
+    width: 200px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+.ok{
+    margin-top: 5vh;
+    width: 200px;
+    height: 50px;
+    border: 1px solid black;
+    background-color: red;
+}
