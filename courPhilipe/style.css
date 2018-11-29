@@ -1,0 +1,13 @@
+div{
+    width: 350px;
+    box-shadow: 5px 5px 5px rgba(red, green, blue, alpha);
+    border: 5px solid green;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#myImage{
+    width: 150px;
+    height: 150px;
+}
