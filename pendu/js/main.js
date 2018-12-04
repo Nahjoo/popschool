@@ -7,19 +7,35 @@
 // var txt = texte.length;
 // var ok ='';
 // var msg = txt - 1;
-// var i ;
+// var i = 0;
 
-// for(i = 0 ; i < txt ; i++){
-//     console.log('ok');
-//     texte[i] = ok + texte[i]
-//     tabl.push(texte[i]);
-//     ok = texte[i];
+
+
+// function boucle(){
+//     for(i = 0 ; i < txt ; i++){
+//         console.log('ok');
+//         texte[i] = ok + texte[i]
+//         tabl.push(texte[i]);
+//         ok = texte[i];
+//     }
+
 // }
 
 // var bis = 0;
 // function change(){
 //     div.innerHTML = tabl[bis];
 //     bis ++;
+//     if(bis == txt){
+//         div.innerHTML = "";
+//         var j = 0;
+//         for(j = 0 ; j< tabl.length; j++){
+//             div.innerHTML= tabl[j];
+//         }
+
+
+//     }
+
+
 //     if(bis >= txt){
 //         bis = msg;
 //     }
@@ -28,7 +44,8 @@
 
 
 // console.log(tabl)
-// setInterval("change()",1000);
+// boucle();
+// setInterval("change()",150);
 
 //pendu
 
@@ -37,53 +54,45 @@ var button = document.querySelector("button");
 button.addEventListener("click", pendu);
 var div = document.querySelector("div");
 
-var tableau = ["abcde"];
-var mot = tableau[0];
-var taillemot = mot.length;
-var motp = new Array();
-var lol = "";
+var etoile = [];
+var mot = ["daccord"];
+var tabl = mot[0].split('');
+
+for(var i = 0; i<tabl.length; i++){
+    etoile.push("*");
+    div.innerHTML = etoile;
+}
+console.log(etoile);
 
 
-console.log(mot);
-
-function pendu(){
-    recup_input();
+function pendu() {
+    var valeur = input.value;
+    console.log(tabl);
+    erreur(valeur);
 }
 
-//recupere la valeur de l'utilisateur
-function recup_input(){
-    var recup = input.value;
-    console.log(recup);
-    erreur(recup);
-    
+
+function erreur(valeur){
+    if(valeur == ""){
+        alert("entre une lettre");
+    }else{
+        comparaison(valeur)
+    }
 }
 
-//compare the lettre
-function comparaison(recup){
-    var ok = 0;
-    input.value = "";
-    motp.push(recup);
-    for(var i = 0; i<taillemot ; i++){
-        if(mot.charAt(i) == recup){
-            motp[i] += recup;
-            div.innerHTML += recup;
-            ok ++;
-            
-        }else {
-
-            div.innerHTML += "*";
+function comparaison(valeur){
+    for(var j = 0; j<tabl.length; j++){
+        if(tabl[j] == valeur) {
+            etoile.splice(j ,1 , valeur);
+            div.innerHTML = etoile;
+            console.log("ok")
         }
     }
+
 }
 
-function erreur(recup){
-    if(input.value == ""){
-        alert("Entrer une lettre svp");
-    }else{
-        comparaison(recup);
-    }
-}
-//--------------------------------------------
+
+
 
 
 
